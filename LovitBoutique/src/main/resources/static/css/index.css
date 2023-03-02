@@ -1,0 +1,48 @@
+body{
+     background-color: #ffa8d9;
+
+    }
+
+    header{
+       background-color: red;
+
+    }
+
+    img{
+    width: 1117px;
+	height: 350px;
+    }
+
+    .bg-custom{
+       background-color: #c33b80;
+    }
+
+    .titulo{
+       color: white;
+       text-align: center;
+    }
+
+     .subtitulo{
+       color: white;
+       text-align: center;
+    }
+
+      .medio{
+       color: white;
+       text-align: center;
+       background-color: #c33b80;
+    }
+
+    .inicioSub{
+
+       color:white;
+    }
+
+    .pindex{
+      color: white;
+    }
+
+    a{
+       text-decoration: none;
+       color: black;
+    }

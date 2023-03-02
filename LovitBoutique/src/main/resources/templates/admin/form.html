@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<div layout:fragment="form">
+    <br>
+    <form action="" method="post" th:object="${producto}"
+          enctype="multipart/form-data">
+        <div class="mb-3">
+            <label for="titulo" class="form-label">Nombre : </label> <input
+                type="text" id="titulo" placeholder="Digite el nombre"
+                class="form-control" th:field="*{titulo}">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('titulo')}"
+                 th:errors="*{titulo}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="descripcion" class="form-label">Descripcion : </label> <textarea
+                id="descripcion" placeholder="Digite la descripcion"
+                class="form-control" th:field="*{descripcion}"></textarea>
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('descripcion')}"
+                 th:errors="*{descripcion}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="portada" class="form-label">Portada : </label> <input
+                type="file" name="portada" id="portada" class="form-control"
+                th:field="*{portada}">
+            <div class="invalid-feedback"
+                 th:if="${#fields.hasErrors('portada')}" th:errors="*{portada}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="largo" class="form-label">Largo : </label> <input
+                type="number" id="largo" placeholder="Digite el largo"
+                class="form-control" th:field="*{largo}">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('largo')}"
+                 th:errors="*{largo}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="ancho" class="form-label">Ancho : </label> <input
+                type="number" id="ancho" placeholder="Digite el ancho"
+                class="form-control" th:field="*{ancho}">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('ancho')}"
+                 th:errors="*{ancho}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="peso" class="form-label">Peso : </label> <input
+                type="number" id="peso" placeholder="Digite el peso"
+                class="form-control" th:field="*{peso}">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('peso')}"
+                 th:errors="*{peso}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="precio" class="form-label">Precio : </label> <input
+                type="number" id="precio" placeholder="Digite el precio"
+                class="form-control" th:field="*{precio}">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('precio')}"
+                 th:errors="*{precio}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="color" class="form-label">Color : </label> <input
+                type="text" id="color" placeholder="Digite el color"
+                class="form-control" th:field="*{color}">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('color')}"
+                 th:errors="*{color}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="minimoVenta" class="form-label">Minimo de venta : </label> <input
+                type="text" id="minimoVenta" placeholder="Digite las piezas minimas de venta"
+                class="form-control" th:field="*{minimoVenta}">
+            <div class="invalid-feedback" th:if="${#fields.hasErrors('minimoVenta')}"
+                 th:errors="*{minimoVenta}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="fechaRegistro" class="form-label">Fecha de
+                registro : </label> <input type="date" id="fechaRegistro"
+                                           placeholder="Digite la fecha de registro" class="form-control"
+                                           th:field="*{fechaRegistro}">
+            <div class="invalid-feedback"
+                 th:if="${#fields.hasErrors('fechaRegistro')}"
+                 th:errors="*{fechaRegistro}"></div>
+        </div>
+
+        <div class="mb-3">
+            <label for="tipos" class="form-label">Tipo : </label> <select
+                id="tipos" class="form-control" th:field="*{tipos}" multiple>
+            <option th:each="tipo : ${tipos}" th:value="${tipo.id}"
+                    th:text="${tipo.titulo}"></option>
+        </select>
+            <div class="invalid-feedback"
+                 th:if="${#fields.hasErrors('tipos')}" th:errors="*{tipos}"></div>
+        </div>
+
+        <div class="text-end">
+            <button type="submit" class="btn btn-primary">Guardar</button>
+        </div>
+
+    </form>
+
+</div>
+</body>
+</html>

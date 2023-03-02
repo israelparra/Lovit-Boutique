@@ -1,0 +1,12 @@
+form .invalid-feedback {
+	display: block;
+
+}
+
+.navbar-custom {
+    background-color: #89004f;
+}
+
+.nav-link{
+     color: white;
+}

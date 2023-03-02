@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{master.html}">
+<head>
+    <meta charset="utf-8">
+    <title>[[${producto.titulo}]]</title>
+    <link rel="stylesheet" type="text/css" href="static/css/producto.css" th:href="@{/css/producto.css}">
+</head>
+<body>
+
+<div layout:fragment="content" th:object="${producto}">
+    <div class="row">
+        <div class="col-md-6">
+            <img th:src="@{/assets/{filename}(filename=*{rutaPortada})}"
+                 th:alt="*{titulo}" class="img-fluid rounded w-100">
+        </div>
+        <div class="col-md-6">
+            <h2 th:text="*{titulo}"></h2>
+            <span class="badge rounded-pull bg-light text-dark me-1"
+                  th:each="tipo : *{tipos}" th:text="${tipo.titulo}"></span>
+            <p th:text="*{descripcion}"></p>
+
+            <div class="atributos">
+                <p class="titulo">Precio</p>
+                <p th:text="*{precio}"></p>
+            </div>
+
+            <div class="atributos">
+                <p class="titulo">Minimo de venta por piezas</p>
+                <p th:text="*{minimoVenta}"></p>
+            </div>
+
+            <div class="atributos">
+                <p class="titulo">Largo</p>
+                <p th:text="*{largo}"></p>
+            </div>
+
+            <div class="atributos">
+                <p class="titulo">Ancho</p>
+                <p th:text="*{ancho}"></p>
+            </div>
+
+            <div class="atributos">
+                <p class="titulo">Peso</p>
+                <p th:text="*{peso}"></p>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    </div>
+
+
+</body>
+</html>
