@@ -41,12 +41,6 @@ public class AdminControlador {
         return new ModelAndView("admin/index").addObject("productos", productos);
     }
 
-    @GetMapping("/prueba")
-    public ModelAndView prueba() {
-        return new ModelAndView("admin/prueba");
-    }
-
-
     @GetMapping("/productos/nuevo")
     public ModelAndView mostrarFormularioDeNuevoProducto() {
         List<Tipo> tipos = tipoRepositorio.findAll(Sort.by("titulo"));
@@ -124,6 +118,7 @@ public class AdminControlador {
 
         return "redirect:/admin";
     }
+
 
 
 

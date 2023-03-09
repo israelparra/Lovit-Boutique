@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{master.html}">
+<head>
+    <meta charset="utf-8">
+    <title>Contacto form</title>
+</head>
+<body>
+
+<h1>FORMULARIO</h1>
+
+<form th:action="@{''}" th:object="${contacto}" method="post">
+<h1>holaaaa</h1>
+    <div>
+        <label for="nombre">Nombre: </label>
+        <input id="nombre" type="text" placeholder="Escribe el nombre" th:field="*{nombre}">
+    </div>
+
+</form>
+
+
+</body>
+</html>
